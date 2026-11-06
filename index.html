@@ -1561,8 +1561,8 @@ function openPidor(){
     var kras = day.kras || {}, pidor = day.pidor || {};
     var claimBtn = '';
     if (!pidor.id && !kras.id){
-      body = '<div class="pd-note">Сегодня в игре только ты. Розыгрыш включается, когда за день ' +
-             'играют хотя бы двое — тогда тут появятся пидор дня и красавчик дня.</div>';
+      body = '<div class="pd-note">Пока в игре только ты. Розыгрыш включается, когда игроков хотя бы двое — ' +
+             'тогда тут появятся пидор дня и красавчик дня.</div>';
     } else {
       if (kras.id && kras.id === me && d.pd !== 'k'){
         claimBtn = '<button class="nbtn main" id="pdClaim" style="width:100%;justify-content:center;min-height:44px">забрать +25 за красавчика</button>';
