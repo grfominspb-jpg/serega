@@ -1404,7 +1404,7 @@ function scoreOf(){
    Заполнить RATING.fb адресом базы, например
    'https://serega-1234-default-rtdb.europe-west1.firebasedatabase.app'
    Пусто — значит рейтинг берётся из api.php (Timeweb/PHP) или локально. */
-var RATING = { fb: '' };
+var RATING = { fb: 'https://serega-81389-default-rtdb.europe-west1.firebasedatabase.app' };
 
 function fbBase(){ return String(RATING.fb || '').replace(/\/+$/, ''); }
 
@@ -1555,7 +1555,7 @@ function openPidor(){
   var body;
   if (!day){
     body = '<div class="pd-note">Не могу достать список игроков: нет связи с рейтингом. ' +
-           'Как только игра будет на сервере, розыгрыш пойдёт среди всех, кто играл за день.</div>';
+           'Как только рейтинг подключится, розыгрыш пойдёт среди всех игроков.</div>';
   } else {
     var me = state.player ? state.player.id : '';
     var kras = day.kras || {}, pidor = day.pidor || {};
@@ -1576,7 +1576,7 @@ function openPidor(){
           '<div class="pd-card good"><div class="pd-k">красавчик дня</div><div class="pd-n">' + esc(kras.name || '—') + '</div>' +
             '<div class="pd-d">' + (kras.best || kras.days || 0) + ' дн. в игре</div></div>' +
         '</div>' +
-        '<div class="pd-note">Выбирается случайно среди всех, кто играл в этот день. Обновляется в полночь.</div>' +
+        '<div class="pd-note">Выбирается случайно среди всех, кто когда-либо играл. Меняется в полночь.</div>' +
         claimBtn;
     }
   }
